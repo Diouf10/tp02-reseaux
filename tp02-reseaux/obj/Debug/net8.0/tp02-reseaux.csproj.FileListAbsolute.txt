@@ -1,0 +1,14 @@
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\bin\Debug\net8.0\tp02-reseaux.exe
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\bin\Debug\net8.0\tp02-reseaux.deps.json
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\bin\Debug\net8.0\tp02-reseaux.runtimeconfig.json
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\bin\Debug\net8.0\tp02-reseaux.dll
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\bin\Debug\net8.0\tp02-reseaux.pdb
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\tp02-reseaux.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\tp02-reseaux.AssemblyInfoInputs.cache
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\tp02-reseaux.AssemblyInfo.cs
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\tp02-reseaux.csproj.CoreCompileInputs.cache
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\tp02-reseaux.dll
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\refint\tp02-reseaux.dll
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\tp02-reseaux.pdb
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\tp02-reseaux.genruntimeconfig.cache
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\ref\tp02-reseaux.dll
