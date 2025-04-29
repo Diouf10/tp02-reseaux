@@ -12,3 +12,4 @@ C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\refint\tp02-
 C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\tp02-reseaux.pdb
 C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\tp02-reseaux.genruntimeconfig.cache
 C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\ref\tp02-reseaux.dll
+C:\Users\diouf\Downloads\tp02-reseaux\tp02-reseaux\obj\Debug\net8.0\tp02-reseaux.sourcelink.json

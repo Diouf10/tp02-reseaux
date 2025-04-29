@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tp02-reseaux")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5a24202bf787d7cb6a2219fbb3f82b22ab55be3")]
 [assembly: System.Reflection.AssemblyProductAttribute("tp02-reseaux")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tp02-reseaux")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

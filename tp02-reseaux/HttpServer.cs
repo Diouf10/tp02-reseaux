@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using static tp02_reseaux.HttpReponse;
 
 namespace tp02_reseaux
 {
@@ -47,23 +48,94 @@ namespace tp02_reseaux
             }
         }
 
+        /// <summary>
+        /// Permet de gérer chaque client au serveur de manière asynchrone.
+        /// </summary>
+        /// <param name="client"></param>
         public void GererClient(TcpClient client)
         {
+            using ( NetworkStream stream = client.GetStream() )
+            {
+                try
+                {
 
-            // Utiliser un try catch pour les erreurs
+                    // Lire la requete du client
+                    HttpRequete? requete = HttpRequete.Parse(stream);
 
-            NetworkStream stream = client.GetStream();
+                    if (requete == null)
+                    {
+                        Console.WriteLine("Connexion vide ignorée.");
+                        return; // Ne pas planter, juste arrêter là
+                    }
 
-            // Lire la requete du client
-            HttpRequete.Parse(stream);
+                    // Gérer la session
+                    Session session = GestionSession.ObtenirOuCreerSession(requete);
+                    HttpResponse reponse = new HttpResponse();
 
-            // Gérer la session
+                    if (requete.method == "GET" && requete.url == "/")
+                    {
+                        string filePath = "index.html";
+                        if (File.Exists(filePath))
+                        {
+                            string content = File.ReadAllText(filePath);
+                            reponse.SetBody(content, "text/html");
+                        }
 
+                        else if (requete.method == "POST")
+                        {
+                            var formData = ParseFormData(requete.body);
 
-            // Générer la réponse
+                            if (formData.ContainsKey("nom"))
+                            {
+                                session.data["nom"] = formData["nom"];
+                            }
 
+                            reponse.SetBody("<html><body><h1>Données reçues</h1></body></html>", "text/html");
+                        }
+                    }
 
-            // Compression
+                    else
+                    {
+                        HttpResponse.EnvoyerErreur(stream, 400, "Bad Request");
+                        return;
+                    }
+
+                    // Compression
+                    Compresseur.AppliquerCompression(requete, reponse);
+                    reponse.Envoyer(stream);
+                }
+
+                catch (FileNotFoundException)
+                {
+                    HttpResponse.EnvoyerErreur(stream, 404, "Not Found");
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erreur : " + ex.Message);
+                    HttpResponse.EnvoyerErreur(stream, 500, "Internal Server Error");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Parse les données.
+        /// </summary>
+        /// <param name="body"></param>
+        /// <returns></returns>
+        private static Dictionary<string, string> ParseFormData(string body)
+        {
+            var dict = new Dictionary<string, string>();
+            var pairs = body.Split('&');
+            foreach (var pair in pairs)
+            {
+                var kv = pair.Split('=');
+                if (kv.Length == 2)
+                {
+                    dict[kv[0]] = Uri.UnescapeDataString(kv[1]);
+                }
+            }
+            return dict;
         }
     }
 }

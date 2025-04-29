@@ -15,12 +15,13 @@ namespace tp02_reseaux
      */
     internal class HttpRequete
     {
-        private string method;
-        private string url;
-        private string protocol;
-        private Dictionary<string, string> headers = new();
-        private string body;
-        private string? newIdsession = null;
+        public string method { get; private set; }
+        public string url { get; private set; }
+        public string protocol { get; private set; }
+        public Dictionary<string, string> headers { get; private set; } = new();
+        public string body { get; private set; } = "";
+        public string? newIdsession { get; set; } = null;
+        public Dictionary<string, string> QueryParameters { get; private set; } = new();
 
         /// <summary>
         /// 
@@ -30,18 +31,17 @@ namespace tp02_reseaux
         /// <exception cref="Exception"></exception>
         public static HttpRequete Parse(NetworkStream stream)
         {
-
             StreamReader reader = new StreamReader(stream, Encoding.ASCII, leaveOpen: true);
             HttpRequete requete = new HttpRequete();
 
             string? line = reader.ReadLine();
-            if (string.IsNullOrEmpty(line)) 
+            if (string.IsNullOrEmpty(line))
             {
-                throw new Exception("Requete vide");
+                return null;
             }
 
             var parts = line.Split(' ');
-            if(parts.Length < 3)
+            if (parts.Length < 3)
             {
                 throw new Exception("Requete mal formée");
             }
@@ -50,37 +50,55 @@ namespace tp02_reseaux
             requete.url = parts[1];
             requete.protocol = parts[2];
 
-
-            // Lire les headers
+            // Lire les headers correctement
             while (!string.IsNullOrEmpty(line = reader.ReadLine()))
             {
-                int separeteur = line.IndexOf(';');
-                if (separeteur == -1)
-                {
-                    continue;
-                }
+                int separator = line.IndexOf(':'); 
+                if (separator == -1) continue;
 
-                string nom = line.Substring(0, separeteur).Trim();
-                string valeur = line.Substring(separeteur + 1).Trim();
-                requete.headers[nom] = valeur;
+                string name = line.Substring(0, separator).Trim();
+                string value = line.Substring(separator + 1).Trim();
+                requete.headers[name] = value;
             }
 
-            // Lire le body selon la requete (post)
 
-            if (requete.method == "POST" && requete.headers.ContainsKey("Content-Length"))
-            {
-                Console.WriteLine("POST");
+            // TODO a utiliser ca au lieu du get en dessous !!!!!
 
-                int contentLength = int.Parse(requete.headers["Content-Length"]);
-                char[] buffer = new char[contentLength];
-                reader.Read(buffer, 0, contentLength);
-                requete.body = new string(buffer);
+        //    // Lire le corps si POST
+        //    if (requete.method == "POST" && requete.headers.ContainsKey("Content-Length"))
+        //    {
+        //        int contentLength = int.Parse(requete.headers["Content-Length"]);
+        //        char[] buffer = new char[contentLength];
+        //        reader.Read(buffer, 0, contentLength);
+        //        requete.body = new string(buffer);
+        //    }
 
-                
-                Console.WriteLine(requete.body);
-            }
+        //    // Gérer les query parameters pour GET
+        //    if (requete.url.Contains('?'))
+        //    {
+        //        var urlParts = requete.url.Split('?', 2);
+        //        requete.url = urlParts[0];
+        //        var query = urlParts[1];
 
-            // Lire le body selon la requete (get)
+        //        var pairs = query.Split('&');
+        //        foreach (var pair in pairs)
+        //        {
+        //            var kv = pair.Split('=');
+        //            if (kv.Length == 2)
+        //            {
+        //                requete.QueryParameters[kv[0]] = Uri.UnescapeDataString(kv[1]);
+        //            }
+        //        }
+        //    }
+
+        //    Console.WriteLine("requête : ");
+        //    Console.WriteLine(requete);
+
+        //    return requete;
+        //}
+
+
+        // Lire le body selon la requete (get)
 
             if (requete.method.StartsWith("GET"))
             {
@@ -88,7 +106,7 @@ namespace tp02_reseaux
                 // Construction de la réponse HTTP (headers + contenu HTML).
                 Console.WriteLine("GET");
 
-                string html = "<html><body><h1>Bienvenue sur le serveur De Momo et Prince C#</h1></body></html>";
+                string html = "<html><body><h1>Bienvenue sur le serveur De Momo, Prince et Zacky C#</h1></body></html>";
                 string response = "HTTP/1.1 200 OK\r\n" +
                 "Content-Type: text/html; charset=UTF-8\r\n" +
                 $"Content-Length: {html.Length}\r\n" +
@@ -98,22 +116,32 @@ namespace tp02_reseaux
                 stream.Write(responseBytes, 0, responseBytes.Length);
 
                 Console.WriteLine(response);
-                
+
             }
 
-            return requete;
+            if (requete.method == "POST" && requete.headers.ContainsKey("Content-Length"))
+                    {
+                        int contentLength = int.Parse(requete.headers["Content-Length"]);
+                        char[] buffer = new char[contentLength];
+                        reader.Read(buffer, 0, contentLength);
+                        requete.body = new string(buffer);
+                    }
+
+                return requete;
         }
+
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="nom"></param>
         /// <returns></returns>
+        /// 
         public string? ObtenirCookie(string nom)
         {
-            if(headers.TryGetValue("Cookie", out string cookies)) 
             {
                 var cookiePairs = cookies.Split(';');
+            if(headers.TryGetValue("Cookie", out string cookies)) 
 
                 foreach (var cookie in cookiePairs)
                 {
@@ -126,6 +154,6 @@ namespace tp02_reseaux
             }
 
             return null;
-        }
+        }  
     }
 }

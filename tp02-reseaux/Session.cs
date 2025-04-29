@@ -9,7 +9,7 @@ namespace tp02_reseaux
     internal class Session
     {
         private string id;
-        private Dictionary<string, string> data;
+        public Dictionary<string, string> data { get; set; }
 
         public Session(string id)
         {
