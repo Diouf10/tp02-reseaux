@@ -8,6 +8,11 @@ using static tp02_reseaux.HttpReponse;
 
 namespace tp02_reseaux
 {
+    /// <summary>
+    /// 
+    /// 
+    /// @author : Mouhammad Wagane Diouf, Prince Elonga Kiese et Zackary Ouirzane
+    /// </summary>
     internal class Compresseur
     {
         /// <summary>
@@ -22,17 +27,21 @@ namespace tp02_reseaux
 
             string encoding = requete.headers["Accept-Encoding"];
 
+            Console.WriteLine("\n(Compression) Accept-Encoding reçu : " + encoding);
+
             if (encoding.Contains("gzip"))
             {
                 reponse.Body = CompressGzip(reponse.Body);
                 reponse.Headers["Content-Encoding"] = "gzip";
                 reponse.Headers["Content-Length"] = reponse.Body.Length.ToString();
+                Console.WriteLine("\nCompression GZIP appliquée.");
             }
             else if (encoding.Contains("br"))
             {
                 reponse.Body = CompressBrotli(reponse.Body);
                 reponse.Headers["Content-Encoding"] = "br";
                 reponse.Headers["Content-Length"] = reponse.Body.Length.ToString();
+                Console.WriteLine("\nCompression Brotli appliquée.");
             }
         }
     

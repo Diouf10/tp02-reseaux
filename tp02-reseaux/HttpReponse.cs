@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -7,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace tp02_reseaux
 {
-    /**
-     * Permet de gérer les réponses
-     * ajoute les bons en tetes.
-     * 
-     * Va donner le bonne réponse HTTP
-     */
+    /// <summary>
+    /// Permet de gérer les réponses
+    /// Ajoute les bons en tetes.
+    /// 
+    /// Va donner le bonne réponse HTTP
+    /// 
+    /// @author : Mouhammad Wagane Diouf, Prince Elonga Kiese et Zackary Ouirzane
+    /// </summary>
     internal class HttpReponse
     {
         public class HttpResponse
@@ -34,6 +37,18 @@ namespace tp02_reseaux
             }
 
             /// <summary>
+            /// Modifier le body.
+            /// </summary>
+            /// <param name="content"></param>
+            /// <param name="contentType"></param>
+            public void SetBody(byte[] content, string contentType)
+            {
+                Body = content;
+                Headers["Content-Type"] = contentType;
+                Headers["Content-Length"] = Body.Length.ToString();
+            }
+
+            /// <summary>
             /// 
             /// </summary>
             /// <param name="stream"></param>
@@ -46,7 +61,7 @@ namespace tp02_reseaux
 
                     // Ajouter DA
                     Headers["X-Etudiant-ID"] = "1936603"; //  DA de Mo
-                    Headers["Server"] = "MonServeur/1.0";
+                    Headers["Server"] = "Serveur";
 
                     // Envoyer tous les headers
                     foreach (var header in Headers)

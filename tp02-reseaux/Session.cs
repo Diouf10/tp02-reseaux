@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace tp02_reseaux
 {
+    /// <summary>
+    /// 
+    /// 
+    /// @author : Mouhammad Wagane Diouf, Prince Elonga Kiese et Zackary Ouirzane
+    /// </summary>
     internal class Session
     {
         private string id;

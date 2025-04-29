@@ -8,10 +8,14 @@ using static tp02_reseaux.HttpReponse;
 
 namespace tp02_reseaux
 {
-    /**
-     * Le serveur, qui accepte les connexions entrantes.
-     * doit atre async (pour multithreading)
-     */
+    /// <summary>
+    ///
+    /// Le serveur, qui accepte les connexions entrantes.
+    /// 
+    /// Doit atre async(pour multithreading)
+    ///
+    /// @author : Mouhammad Wagane Diouf, Prince Elonga Kiese et Zackary Ouirzane
+    /// </summary>
     internal class HttpServer
     {
         // Pour écouter les connexions
@@ -38,7 +42,7 @@ namespace tp02_reseaux
             {
                 TcpClient client = listener.AcceptTcpClient();
 
-                Console.WriteLine("Client connecté !!!");
+                Console.WriteLine("\nClient connecté !!!");
 
                 // Thread pour chaque client
                 Thread clientThread = new Thread(() => GererClient(client));
@@ -62,45 +66,66 @@ namespace tp02_reseaux
                     // Lire la requete du client
                     HttpRequete? requete = HttpRequete.Parse(stream);
 
+                    Console.WriteLine("\n--- Nouvelle requête ---");
+
                     if (requete == null)
                     {
-                        Console.WriteLine("Connexion vide ignorée.");
+                        Console.WriteLine("\nConnexion vide ignorée.");
                         return; // Ne pas planter, juste arrêter là
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Méthode : {requete.method}");
+                        Console.WriteLine($"URL demandée : {requete.url}");
+                        Console.WriteLine($"Protocole : {requete.protocol}");
+
+                        Console.WriteLine("En-têtes reçus :");
+                        foreach (var h in requete.headers)
+                        {
+                            Console.WriteLine($"  {h.Key}: {h.Value}");
+                        }
+                        Console.WriteLine("\n");
                     }
 
                     // Gérer la session
                     Session session = GestionSession.ObtenirOuCreerSession(requete);
                     HttpResponse reponse = new HttpResponse();
 
-                    if (requete.method == "GET" && requete.url == "/")
+                    string pageDemandee = requete.url == "/" ? "/index.html" : requete.url;
+                    if (requete.method == "GET")
                     {
-                        string filePath = "index.html";
-                        if (File.Exists(filePath))
-                        {
-                            string content = File.ReadAllText(filePath);
-                            reponse.SetBody(content, "text/html");
-                        }
-
-                        else if (requete.method == "POST")
-                        {
-                            var formData = ParseFormData(requete.body);
-
-                            if (formData.ContainsKey("nom"))
-                            {
-                                session.data["nom"] = formData["nom"];
-                            }
-
-                            reponse.SetBody("<html><body><h1>Données reçues</h1></body></html>", "text/html");
-                        }
+                        string path = requete.url == "/" ? "/index.html" : requete.url;
+                        reponse = ServirFichierStatique(path);
                     }
+                    else if (requete.method == "POST" && requete.url == "/formulaire")
+                    {
+                        Console.WriteLine("\nContenu POST : " + requete.body);
 
+                        var formData = ParseFormData(requete.body);
+                        if (formData.ContainsKey("nom")) { 
+                            session.data["nom"] = formData["nom"];
+                            Console.WriteLine($"\nNom enregistré en session : {session.data["nom"]}");
+                        }
+
+
+                        string html = $"<html><body><h1>Bienvenue {session.data["nom"]}</h1></body></html>";
+                        reponse = new HttpResponse();
+
+                        Console.WriteLine("Données reçues dans le body :");
+                        Console.WriteLine(requete.body);
+
+                        reponse.SetBody(html, "text/html");
+                    }
                     else
                     {
-                        HttpResponse.EnvoyerErreur(stream, 400, "Bad Request");
-                        return;
+                        reponse = new HttpResponse();
+                        reponse.StatutCode = "400 Bad Request";
+                        reponse.SetBody("<h1>Requête invalide</h1>", "text/html");
                     }
 
-                    // Compression
+                    if (requete.newIdsession != null)
+                        reponse.Headers["Set-Cookie"] = $"sessionId={requete.newIdsession}; HttpOnly";
+
                     Compresseur.AppliquerCompression(requete, reponse);
                     reponse.Envoyer(stream);
                 }
@@ -136,6 +161,50 @@ namespace tp02_reseaux
                 }
             }
             return dict;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cheminRelatif"></param>
+        /// <returns></returns>
+        private HttpResponse ServirFichierStatique(string cheminRelatif)
+        {
+            string basePath = "wwwroot";
+            string fullPath = Path.Combine(basePath, cheminRelatif.TrimStart('/'));
+
+            HttpResponse response = new HttpResponse();
+
+            Console.WriteLine($"\nTentative de lecture du fichier : {fullPath}");
+
+            if (!File.Exists(fullPath))
+            {
+                Console.WriteLine("\nFichier non trouvé.");
+                response.StatutCode = "404 Not Found";
+                response.SetBody("<html><body><h1>404 - Fichier non trouvé</h1></body></html>", "text/html");
+                Console.WriteLine("GET - Fichier non trouvé\n");
+                return response;
+            }
+            else
+            {
+                Console.WriteLine("\nFichier trouvé, envoi au client.");
+            }
+
+            string extension = Path.GetExtension(fullPath).ToLower();
+            string contentType = extension switch
+            {
+                ".html" => "text/html",
+                ".css" => "text/css",
+                ".js" => "application/javascript",
+                ".png" => "image/png",
+                ".jpg" or ".jpeg" => "image/jpeg",
+                ".ico" => "image/x-icon",
+                _ => "application/octet-stream"
+            };
+
+            byte[] contenu = File.ReadAllBytes(fullPath);
+            response.SetBody(contenu, contentType);
+            return response;
         }
     }
 }

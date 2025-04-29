@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|c:\\users\\diouf\\downloads\\tp02-reseaux\\tp02-reseaux\\gestionsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|solutionrelative:tp02-reseaux\\gestionsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|c:\\users\\diouf\\downloads\\tp02-reseaux\\tp02-reseaux\\compresseur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|solutionrelative:tp02-reseaux\\compresseur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|c:\\users\\diouf\\downloads\\tp02-reseaux\\tp02-reseaux\\httpreponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|solutionrelative:tp02-reseaux\\httpreponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|c:\\users\\diouf\\downloads\\tp02-reseaux\\tp02-reseaux\\httprequete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|solutionrelative:tp02-reseaux\\httprequete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|c:\\users\\diouf\\downloads\\tp02-reseaux\\tp02-reseaux\\httpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|solutionrelative:tp02-reseaux\\httpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|c:\\users\\diouf\\downloads\\tp02-reseaux\\tp02-reseaux\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|solutionrelative:tp02-reseaux\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|c:\\users\\diouf\\downloads\\tp02-reseaux\\tp02-reseaux\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|solutionrelative:tp02-reseaux\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|c:\\users\\diouf\\downloads\\tp02-reseaux\\tp02-reseaux\\wwwroot\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|solutionrelative:tp02-reseaux\\wwwroot\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|c:\\users\\diouf\\downloads\\tp02-reseaux\\tp02-reseaux\\wwwroot\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{23E1655A-61DB-4CAA-86F8-CF3802277C30}|tp02-reseaux\\tp02-reseaux.csproj|solutionrelative:tp02-reseaux\\wwwroot\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,25 +51,116 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GestionSession.cs",
+              "DocumentMoniker": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\GestionSession.cs",
+              "RelativeDocumentMoniker": "tp02-reseaux\\GestionSession.cs",
+              "ToolTip": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\GestionSession.cs",
+              "RelativeToolTip": "tp02-reseaux\\GestionSession.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T22:41:41.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Session.cs",
+              "DocumentMoniker": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\Session.cs",
+              "RelativeDocumentMoniker": "tp02-reseaux\\Session.cs",
+              "ToolTip": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\Session.cs",
+              "RelativeToolTip": "tp02-reseaux\\Session.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T22:41:38.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Compresseur.cs",
+              "DocumentMoniker": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\Compresseur.cs",
+              "RelativeDocumentMoniker": "tp02-reseaux\\Compresseur.cs",
+              "ToolTip": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\Compresseur.cs",
+              "RelativeToolTip": "tp02-reseaux\\Compresseur.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T22:02:43.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HttpReponse.cs",
+              "DocumentMoniker": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\HttpReponse.cs",
+              "RelativeDocumentMoniker": "tp02-reseaux\\HttpReponse.cs",
+              "ToolTip": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\HttpReponse.cs",
+              "RelativeToolTip": "tp02-reseaux\\HttpReponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T21:29:49.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "tp02-reseaux\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\wwwroot\\index.html",
+              "RelativeToolTip": "tp02-reseaux\\wwwroot\\index.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-29T21:17:02.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "script.js",
+              "DocumentMoniker": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\wwwroot\\script.js",
+              "RelativeDocumentMoniker": "tp02-reseaux\\wwwroot\\script.js",
+              "ToolTip": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\wwwroot\\script.js",
+              "RelativeToolTip": "tp02-reseaux\\wwwroot\\script.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-29T21:16:57.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "styles.css",
+              "DocumentMoniker": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\wwwroot\\styles.css",
+              "RelativeDocumentMoniker": "tp02-reseaux\\wwwroot\\styles.css",
+              "ToolTip": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\wwwroot\\styles.css",
+              "RelativeToolTip": "tp02-reseaux\\wwwroot\\styles.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-29T21:16:42.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "HttpRequete.cs",
               "DocumentMoniker": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\HttpRequete.cs",
               "RelativeDocumentMoniker": "tp02-reseaux\\HttpRequete.cs",
               "ToolTip": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\HttpRequete.cs",
               "RelativeToolTip": "tp02-reseaux\\HttpRequete.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAgwF0AAAA2AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T23:37:04.838Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "HttpServer.cs",
               "DocumentMoniker": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\HttpServer.cs",
               "RelativeDocumentMoniker": "tp02-reseaux\\HttpServer.cs",
               "ToolTip": "C:\\Users\\diouf\\Downloads\\tp02-reseaux\\tp02-reseaux\\HttpServer.cs",
               "RelativeToolTip": "tp02-reseaux\\HttpServer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T23:36:57.702Z",
               "EditorCaption": ""
